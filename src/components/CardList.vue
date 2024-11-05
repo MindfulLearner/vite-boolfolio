@@ -7,7 +7,7 @@ export default {
   data() {
     return {
       cards: [],
-      products: [],
+      pagination: [],
     };
   },
   components: {
@@ -17,11 +17,15 @@ export default {
     this.fetchCards();
   },
   methods: {
-    fetchCards() {
-      axios.get('http://192.168.1.101:9000/api/users').then((response) => {
-        this.cards = response.data;
-        this.products = response.data.products;
+    fetchCards(page = 1) {
+      axios.get(`http://192.168.1.101:9000/api/users?page=${page}`).then((response) => {
+        this.cards = response.data.products.data;
+        this.pagination = response.data.products.pagination;
+        console.log(this.cards);
       });
+    },
+    goToPage(page) {
+      this.fetchCards(page);
     },
   },
 };
@@ -32,7 +36,11 @@ export default {
   <div>
     <h1>CardList</h1>
     <div v-for="card in cards" :key="card.id">
-      <Card :card="card" :products="products" />
+      <Card :card="card" :pagination="pagination" />
+    </div>
+    <div>
+      <button @click="goToPage(pagination.current_page - 1)">Previous</button>
+      <button @click="goToPage(pagination.current_page + 1)">Next</button>
     </div>
   </div>
 </template>

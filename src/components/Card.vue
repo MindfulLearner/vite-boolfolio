@@ -1,7 +1,8 @@
 <script >
 export default {
   props: {
-    products: Array,
+    card: Object,
+    pagination: Object,
   },
 };
 </script>
@@ -10,12 +11,12 @@ export default {
   <div>
     <h1>Card</h1>
     <ul>
-      <li v-for="product in products" :key="product.id">
-        <img :src="product.cover_image" alt="Product Image" />
-        <h2>{{ product.name }}</h2>
-        <p>{{ product.description }}</p>
-        <p>Price: {{ product.price }}</p>
-        <p>Likes: {{ product.likes }}</p>
+      <li v-for="pagination in pagination" :key="pagination.id">
+        <img :src="pagination.cover_image" alt="Product Image" />
+        <h2>{{ pagination.name }}</h2>
+        <p>{{ pagination.description }}</p>
+        <p>Price: {{ pagination.price }}</p>
+        <p>Likes: {{ pagination.likes }}</p>
       </li>
     </ul>
   </div>
