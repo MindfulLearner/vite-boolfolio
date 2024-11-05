@@ -2,7 +2,6 @@
 export default {
   props: {
     card: Object,
-    pagination: Object,
   },
 };
 </script>
@@ -11,13 +10,11 @@ export default {
   <div>
     <h1>Card</h1>
     <ul>
-      <li v-for="pagination in pagination" :key="pagination.id">
-        <img :src="pagination.cover_image" alt="Product Image" />
-        <h2>{{ pagination.name }}</h2>
-        <p>{{ pagination.description }}</p>
-        <p>Price: {{ pagination.price }}</p>
-        <p>Likes: {{ pagination.likes }}</p>
-      </li>
+      <img :src="card.cover_image" alt="Product Image" />
+      <h2>{{ card.name }}</h2>
+      <p>{{ card.description }}</p>
+      <p>Price: {{ card.price }}</p>
+      <p>Likes: {{ card.likes }}</p>
     </ul>
   </div>
 </template>
