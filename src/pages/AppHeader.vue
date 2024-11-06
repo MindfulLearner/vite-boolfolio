@@ -6,7 +6,6 @@ export default {
 
 <template>
   <div>
-    <router-link to="/" class="clickable">Home</router-link>
-    <router-link to="/cardlist" class="clickable">CardList</router-link>
+    home
   </div>
 </template>
