@@ -1,8 +1,9 @@
-<script setup lang="ts">
-import CardList from './components/CardList.vue';
+<script>
+import AppHeader from './pages/AppHeader.vue';
 </script>
 
 <template>
-  <CardList />
+  <AppHeader />
+  <router-view />
 </template>
 

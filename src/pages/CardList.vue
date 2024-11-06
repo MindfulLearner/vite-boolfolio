@@ -1,6 +1,6 @@
 <!-- cardlist presi da axios a carimcamento iniziale  -->
 <script >
-import Card from './Card.vue';
+import Card from '../components/Card.vue';
 import axios from 'axios';
 
 export default {
