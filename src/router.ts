@@ -6,6 +6,8 @@ import AppHeader from './components/AppHeader.vue';
 import CardList from './pages/CardList.vue';
 //showcard
 import ShowCard from './pages/ShowCard.vue';
+//notfound
+import NotFound from './pages/NotFound.vue';
 
 const routes =  createRouter({
   history: createWebHistory(),
@@ -13,6 +15,7 @@ const routes =  createRouter({
     { path: '/', component: AppHeader },
     { path: '/cardlist', component: CardList },
     { path: '/showcard/:id', name: 'swagger', component: ShowCard },
+    { path: '/:pathMatch(.*)*', component: NotFound },
    ],
 });
 

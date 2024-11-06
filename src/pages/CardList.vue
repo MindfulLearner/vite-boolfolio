@@ -18,7 +18,7 @@ export default {
   },
   methods: {
     fetchCards(page) {
-      axios.get(`http://192.168.1.101:9000/api/users?page=${page}`).then((response) => {
+      axios.get(`http://192.168.1.101:9000/api/users?page=${page}id`).then((response) => {
         this.cards = response.data.products.data;
         console.log(this.cards);
       });
@@ -57,7 +57,7 @@ export default {
     </div>
     <h1>CardList</h1>
     <div v-for="card in cards" :key="card.id">
-      <Card :card="card" />
+      <Card :card="card" :page="count" />
     </div>
   </div>
 </template>

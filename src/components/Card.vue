@@ -2,6 +2,7 @@
 export default {
   props: {
     card: Object,
+    page: Number,
   },
   methods: {
     showCard() {
@@ -9,8 +10,7 @@ export default {
         name: 'swagger', 
         params: { 
           id: this.card.id, 
-          name: this.card.name,
-          description: this.card.description
+          page: this.card.page,
         } 
       });
     },
@@ -23,6 +23,7 @@ export default {
     <h1>Card</h1>
     <ul>
       <img :src="card.cover_image" alt="Product Image" />
+      <div> page: {{page}}</div>
       <h2>{{ card.name }}</h2>
       <p>{{ card.description }}</p>
       <p>Price: {{ card.price }}</p>

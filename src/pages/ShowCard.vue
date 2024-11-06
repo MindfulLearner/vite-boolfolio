@@ -3,6 +3,8 @@
 export default {
   data() {
     return {
+      id: this.$route.params.id,
+      page: this.$route.params.page,
     };
   },
 };
@@ -10,8 +12,7 @@ export default {
 
 <template>
   <div>
-    id: {{ $route.params.id }}
-    name: {{ $route.params.name }}
-    description: {{ $route.params.description }}
+    id: {{ id }}
+    page: {{ page }}
   </div>
 </template>
