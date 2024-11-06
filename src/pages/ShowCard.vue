@@ -5,7 +5,7 @@ import axios from 'axios';
 export default {
   data() {
     return {
-      id: this.$route.params.id,
+      slug: this.$route.params.slug,
       card: {},
     };
   },
@@ -14,7 +14,7 @@ export default {
   },
   methods: {
     fetchCard() {
-      axios.get(`http://192.168.1.101:9000/api/users/${this.id}`).then((response) => {
+      axios.get(`http://192.168.1.101:9000/api/users/${this.slug}`).then((response) => {
         this.card = response.data.product;
         console.log(this.card);
       });
@@ -26,7 +26,7 @@ export default {
 <template>
   <div>
     <h1>ShowCard</h1>
-    <div> id: {{ id }}</div>
+    <div> slug: {{ slug }}</div>
     <div> name: {{ card.name }}</div>
     <div> description: {{ card.description }}</div>
     <div> price: {{ card.price }}</div>

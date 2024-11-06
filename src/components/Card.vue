@@ -7,10 +7,9 @@ export default {
   methods: {
     showCard() {
       this.$router.push({ 
-        name: 'swagger', 
+        name: 'showcard', 
         params: { 
-          id: this.card.id, 
-          page: this.card.page,
+          slug: this.card.slug, 
         } 
       });
     },

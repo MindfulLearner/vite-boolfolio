@@ -14,7 +14,7 @@ const routes =  createRouter({
   routes: [
     { path: '/', component: AppHeader },
     { path: '/cardlist', component: CardList },
-    { path: '/showcard/:id', name: 'swagger', component: ShowCard },
+    { path: '/showcard/:slug', name: 'showcard', component: ShowCard },
     { path: '/:pathMatch(.*)*', component: NotFound },
    ],
 });

@@ -18,7 +18,7 @@ export default {
   },
   methods: {
     fetchCards(page) {
-      axios.get(`http://192.168.1.101:9000/api/users?page=${page}id`).then((response) => {
+      axios.get(`http://192.168.1.101:9000/api/users?page=${page}`).then((response) => {
         this.cards = response.data.products.data;
         console.log(this.cards);
       });
