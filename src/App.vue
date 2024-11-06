@@ -1,13 +1,17 @@
 <script>
-import AppHeader from './pages/AppHeader.vue';
+import AppHeader from './components/AppHeader.vue';
+import NavBar from './components/NavBar.vue';
+
+export default {
+  components: {
+    AppHeader,
+    NavBar,
+  },
+};
 </script>
 
 <template>
- <router-link :to="{ path: '/' }" class="clickable">Home</router-link>
-  <router-link :to="{ path: '/cardlist' }" class="clickable">CardList</router-link>
-
-  <AppHeader />
- 
+  <NavBar />
   <router-view />
 </template>
 

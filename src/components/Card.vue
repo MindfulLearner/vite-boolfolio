@@ -3,6 +3,18 @@ export default {
   props: {
     card: Object,
   },
+  methods: {
+    showCard() {
+      this.$router.push({ 
+        name: 'swagger', 
+        params: { 
+          id: this.card.id, 
+          name: this.card.name,
+          description: this.card.description
+        } 
+      });
+    },
+  },
 };
 </script>
 
@@ -15,6 +27,7 @@ export default {
       <p>{{ card.description }}</p>
       <p>Price: {{ card.price }}</p>
       <p>Likes: {{ card.likes }}</p>
+      <button @click="showCard">mostra card</button>
     </ul>
   </div>
 </template>

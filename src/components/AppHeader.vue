@@ -6,6 +6,6 @@ export default {
 
 <template>
   <div>
-    home
+    swag
   </div>
 </template>
