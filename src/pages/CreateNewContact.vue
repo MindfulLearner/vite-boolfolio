@@ -1,4 +1,5 @@
 <script>
+import axios from 'axios';
 export default {
   name: "CreateNewContact",
   data() {
@@ -10,7 +11,15 @@ export default {
   },
   methods: {
     createContact() {
-    console.log(this.name, this.email, this.phone);
+      axios.post('http://192.168.1.101:9000/api/create_contact', {
+        name: this.name,
+        email: this.email,
+        phone: this.phone,
+      }).then((response) => {
+        console.log(response);
+      }).catch((error) => {
+        console.log(error);
+      });
     },
   },
 };
@@ -22,6 +31,6 @@ export default {
     <input type="text" v-model="name" placeholder="Name" />
     <input type="text" v-model="email" placeholder="Email" />
     <input type="text" v-model="phone" placeholder="Phone" />
-    <button type="submit" @click="createContact">Create</button>
+    <button type="submit" >Create</button>
   </form>
 </template>
